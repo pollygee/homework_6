@@ -31,8 +31,8 @@ done - command is UPdate zip set quantity="10108" from addresses where user_id =
 
 
 6)  How much would it cost to buy one of each piece of jewelery?
-$78.58
-select sum(price) from items where category="Jewelery";
+$226.26
+select sum(price) from items where category like '%Jewelery%';
 
 
 7) How many total items did we sell?
@@ -52,4 +52,15 @@ select * from users where first_name="Polly" (to find id)
 insert into orders values(null, 51, 40, 2);
 
 
+HARD MODE: 
+
+10) What item was ordered most often? Grossed the most money?
+Ordered the most often - 
+Gorgeous Granite Pants
+select name, item_id,sum(quantity) from orders join items on orders.item_id = items.id group by item_id order by sum(quantity) desc;
+
+
+What user spent the most?
+What were the top 3 highest grossing categories?
+Which item was never ordered?
 
