@@ -17,6 +17,7 @@ select name from items order by price desc limit 5;
 
 
 3)  What's the cheapest electronics item?
+Answers could vary - if you mean Electronics and something else could be in the category the answer would be different.  I took it to mean the category is exactly Electronics.
 Rustic Wooden Table.
 select * from items order by price desc where category='Electronics';
 
@@ -24,7 +25,7 @@ select * from items order by price desc where category='Electronics';
 4)  Who lives at "489 Fritsch Island"? Do they have another address?
 Marty Schmidt, other adddress is 84642 Bosco Orchard
 SELECT * from addresses join users on users.id = user_id where street="489 Fritsch Island"
-SELECT * from addresses join users on users.id = user_id where user_id = 35;
+SELECT * from addresses where user_id = 35;
 
 5)  Correct Tevin Mitchell's New York zip code to 10108.
 done - command is UPdate zip set quantity="10108" from addresses where user_id = 25;
@@ -60,7 +61,14 @@ Gorgeous Granite Pants
 select name, item_id,sum(quantity) from orders join items on orders.item_id = items.id group by item_id order by sum(quantity) desc;
 
 
-What user spent the most?
-What were the top 3 highest grossing categories?
-Which item was never ordered?
+11) What user spent the most?
+
+
+
+12) What were the top 3 highest grossing categories?
+
+
+
+13) Which item was never ordered?
+
 
